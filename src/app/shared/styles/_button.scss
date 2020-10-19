@@ -1,0 +1,24 @@
+.btn {
+  background: 0;
+  border: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
+  height: 40px;
+
+  svg {
+    margin-right: 14px;
+  }
+
+  &.primary {
+    padding: 8px 16px;
+    background: #1C52A3;
+    box-shadow: 0px 10px 36px -12px rgba(33, 131, 223, 0.15);
+    border-radius: 4px;
+    color: #ffff;
+  }
+}
