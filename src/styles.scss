@@ -1,6 +1,15 @@
 @import "normalize";
 @import "button";
 
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  color: #2d2d2d;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
 .container {
   width: 1248px;
   margin: 0 auto;
@@ -8,4 +17,8 @@
   @media (max-width: 767px) {
     max-width: 100%;
   }
+}
+
+.spacer {
+  flex-grow: 1;
 }
