@@ -15,7 +15,7 @@ peace of mind — the perfect kick-off to your new chapter.
         <label>
           <input class="hero__field-input" type="text" placeholder="Where are you moving from?">
         </label>
-        <button class="btn primary">
+        <button class="btn primary" [routerLink]="['', {outlets: {modal: 'form'}}]">
           Go
         </button>
       </div>
@@ -228,7 +228,7 @@ of any distance, and constant care for your home and belongings.
       <label>
         <input class="hero__field-input" type="text" placeholder="Where are you moving from?">
       </label>
-      <button class="btn primary">
+      <button class="btn primary" [routerLink]="['', {outlets: {modal: 'form'}}]">
         Go
       </button>
     </div>

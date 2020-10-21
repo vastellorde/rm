@@ -1,0 +1,147 @@
+.modal {
+  position: fixed;
+  width: 840px;
+  height: 450px;
+  background: #ffffff;
+  top: calc(50% - 225px);
+  left: calc(50% - 420px);
+  z-index: 100;
+  border-radius: 4px;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .close-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: #1C52A3;
+      border-radius: 0px 4px 0px 0px;
+      width: 56px;
+      height: 56px;
+      border: 0;
+      cursor: pointer;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .stepper {
+      display: flex;
+      align-items: center;
+      height: 136px;
+      .step {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        color: #232323;
+        width: 98px;
+
+        &:not(:last-of-type) {
+          margin-right: 8px;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          width: 98px;
+          height: 8px;
+          background: #C0C0C0;
+          margin-bottom: 20px;
+        }
+
+        &:first-of-type, &:last-of-type {
+          width: 142px;
+
+          &:before {
+            border-radius: 0px 8px 8px 0px;
+            background: #3D8AFF;
+            width: 139px;
+          }
+        }
+
+        &:first-of-type {
+          text-align: start;
+          &:before {
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+          }
+        }
+
+        &:last-of-type {
+          text-align: end;
+        }
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 48px;
+      color: #232323;
+      margin-top: 43px;
+      margin-bottom: 16px;
+    }
+    span {
+      font-size: 16px;
+      line-height: 24px;
+      color: #232323;
+      margin-bottom: 24px;
+      max-width: 411px;
+      text-align: center;
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #C0C0C0;
+}
+
+.hero__field {
+  display: flex;
+  align-items: stretch;
+
+  &-input {
+    height: 56px;
+    width: 308px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #8E8E8E;
+    background: #F5F5F5;
+    box-shadow: 0px 10px 36px -12px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: 0;
+    padding: 16px 24px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .btn {
+    height: 56px;
+    width: 100px;
+    justify-content: center;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.54;
+}

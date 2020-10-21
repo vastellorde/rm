@@ -9,7 +9,12 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    loadChildren: () => import('./lazy-components/main/main.module').then(m => m.MainModule)
+    loadChildren: () => import('./lazy-components/main/main.module').then(m => m.MainModule),
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./lazy-components/form-modal/form-modal.module').then(m => m.FormModalModule),
+    outlet: 'modal'
   }
 ];
 
