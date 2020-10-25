@@ -6,7 +6,9 @@
       </svg>
     </button>
     <div class="stepper" *ngIf="currentStep < 5">
-      <span *ngFor="let step of steps; let index = index" class="step" [class.active]="currentStep >= index">{{step}}</span>
+      <ng-container *ngFor="let step of steps; let index = index">
+        <span *ngIf="step !== 'Success'" class="step" [class.active]="currentStep >= index">{{step}}</span>
+      </ng-container>
     </div>
     <button class="close-btn" [routerLink]="['/',{outlets: {modal: null}}]">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
