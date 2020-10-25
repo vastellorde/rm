@@ -11,7 +11,8 @@ export class FormModalComponent implements OnInit {
     'Info',
     'Date',
     'Size',
-    'Where'
+    'Where',
+    'Success'
   ];
   currentStep = 0;
 
@@ -19,6 +20,7 @@ export class FormModalComponent implements OnInit {
   onEnterPress(): void {
     if (this.currentStep < this.steps.length) {
       this.currentStep++;
+      console.log(this.currentStep);
     }
   }
   constructor() { }

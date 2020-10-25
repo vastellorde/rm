@@ -1,11 +1,11 @@
 <div class="modal">
   <header class="header">
-    <button *ngIf="currentStep !== 0" class="back-btn" (click)="currentStep > 0 ? currentStep = currentStep - 1 : null">
+    <button *ngIf="currentStep !== 0 && currentStep < 5" class="back-btn" (click)="currentStep > 0 ? currentStep = currentStep - 1 : null">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M19 11L7.14 11L10.77 6.64C10.854 6.53888 10.9174 6.4222 10.9563 6.29661C10.9953 6.17103 11.0091 6.039 10.997 5.90807C10.9726 5.64365 10.8442 5.39974 10.64 5.23C10.4358 5.06026 10.1725 4.9786 9.90808 5.00298C9.64365 5.02736 9.39974 5.15578 9.23 5.36L4.23 11.36C4.19636 11.4077 4.16628 11.4579 4.14 11.51C4.14 11.56 4.09 11.59 4.07 11.64C4.02467 11.7547 4.00094 11.8767 4 12C4.00094 12.1233 4.02467 12.2453 4.07 12.36C4.07 12.41 4.12 12.44 4.14 12.49C4.16628 12.5421 4.19636 12.5923 4.23 12.64L9.23 18.64C9.32402 18.7529 9.44176 18.8437 9.57485 18.9059C9.70793 18.9681 9.85309 19.0002 10 19C10.2337 19.0005 10.4601 18.9191 10.64 18.77C10.7413 18.686 10.825 18.5829 10.8863 18.4666C10.9477 18.3503 10.9855 18.2229 10.9975 18.092C11.0096 17.961 10.9957 17.8289 10.9567 17.7033C10.9176 17.5777 10.8542 17.461 10.77 17.36L7.14 13L19 13C19.2652 13 19.5196 12.8946 19.7071 12.7071C19.8946 12.5196 20 12.2652 20 12C20 11.7348 19.8946 11.4804 19.7071 11.2929C19.5196 11.1054 19.2652 11 19 11Z" fill="white"/>
       </svg>
     </button>
-    <div class="stepper">
+    <div class="stepper" *ngIf="currentStep < 5">
       <span *ngFor="let step of steps; let index = index" class="step" [class.active]="currentStep >= index">{{step}}</span>
     </div>
     <button class="close-btn" [routerLink]="['/',{outlets: {modal: null}}]">
@@ -14,8 +14,8 @@
       </svg>
     </button>
   </header>
-  <div class="divider"></div>
-  <main class="main">
+  <div class="divider" *ngIf="currentStep < 5"></div>
+  <main *ngIf="currentStep < 5; else successContent" class="main">
     <ng-container [ngSwitch]="currentStep">
       <ng-template [ngSwitchCase]="0">
         <h1>Where are you moving from?</h1>
@@ -114,3 +114,17 @@ text of the printing</span>
   </main>
 </div>
 <div class="backdrop"></div>
+<ng-template #successContent>
+  <div class="success">
+    <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <rect width="53" height="53" fill="url(#pattern0)"/>
+      <defs>
+        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#image0" transform="scale(0.0188679)"/>
+        </pattern>
+        <image id="image0" width="53" height="53" xlink:href="data:image/png;base64,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"/>
+      </defs>
+    </svg>
+    <span class="success__title">Your application is accepted</span>
+  </div>
+</ng-template>

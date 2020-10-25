@@ -1,0 +1,20 @@
+<header>
+  <h1>The best blogs you should <br> be reading</h1>
+</header>
+<main class="container">
+  <article *ngFor="let post of [].constructor(9)" class="post" [routerLink]="['/', 'blog', 'slug']">
+    <img class="post__img" src="assets/image/test1.png" alt="">
+    <span class="post__title">Title blog</span>
+    <span class="post__body">
+          That cross-country move will feel
+more akin
+to a welcome vacation. The before and after
+of long distance moving is a chore unto...
+        </span>
+  </article>
+</main>
+<footer class="container">
+  <!--<span >First</span>-->
+  <span *ngFor="let page of pages" [class.active]="page === 1">{{page}}</span>
+  <span>Last</span>
+</footer>

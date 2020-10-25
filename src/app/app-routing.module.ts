@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'form',
     loadChildren: () => import('./lazy-components/form-modal/form-modal.module').then(m => m.FormModalModule),
     outlet: 'modal'
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('./lazy-components/blog/blog.module').then(m => m.BlogModule),
   }
 ];
 
