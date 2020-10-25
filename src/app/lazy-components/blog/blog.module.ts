@@ -14,13 +14,11 @@ import {RouterModule} from '@angular/router';
       {
         path: '',
         component: PostListComponent,
-        children: [
-          {
-            path: ':slug',
-            component: PostComponent
-          }
-        ]
       },
+      {
+        path: ':slug',
+        component: PostComponent
+      }
     ])
   ]
 })

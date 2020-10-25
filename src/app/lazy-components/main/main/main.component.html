@@ -243,30 +243,10 @@ of any distance, and constant care for your home and belongings.
       </button>
     </header>
     <div class="posts">
-      <article class="post">
+      <article *ngFor="let post of [].constructor(3)" class="post">
         <img class="post__img" src="assets/image/test1.png" alt="">
         <span class="post__title">Title blog</span>
-        <span class="post__body">
-          That cross-country move will feel
-more akin
-to a welcome vacation. The before and after
-of long distance moving is a chore unto...
-        </span>
-      </article>
-      <article class="post">
-        <img class="post__img" src="assets/image/test2.png" alt="">
-        <span class="post__title">Title blog</span>
-        <span class="post__body">
-          That cross-country move will feel
-more akin
-to a welcome vacation. The before and after
-of long distance moving is a chore unto...
-        </span>
-      </article>
-      <article class="post">
-        <img class="post__img" src="assets/image/test3.png" alt="">
-        <span class="post__title">Title blog</span>
-        <span class="post__body">
+        <span class="post__text">
           That cross-country move will feel
 more akin
 to a welcome vacation. The before and after

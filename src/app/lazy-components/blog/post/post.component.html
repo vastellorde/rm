@@ -1,1 +1,44 @@
-<p>post works!</p>
+<header class="container">
+  <img src="assets/image/post.png" alt="">
+</header>
+<main>
+  <h1>What are autobuffers and is it
+    worth installing them</h1>
+  <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+a galley of type and scrambled it to make a type specimen book. It has survived not only five
+centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker including versions
+of Lorem Ipsum.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+a galley of type and scrambled it to make a type specimen book. It has survived not only five
+centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker including versions
+of Lorem Ipsum.</span>
+</main>
+<div class="divider"></div>
+<div class="wrapper container">
+  <div class="header">
+    <button class="btn" routerLink="/blog">
+      see more <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 12H20" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 6L20 12L14 18" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    </button>
+  </div>
+  <div class="posts">
+    <article *ngFor="let post of [].constructor(3)" class="post">
+      <img class="post__img" src="assets/image/test1.png" alt="">
+      <span class="post__title">Title blog</span>
+      <span class="post__text">
+          That cross-country move will feel
+more akin
+to a welcome vacation. The before and after
+of long distance moving is a chore unto...
+        </span>
+    </article>
+  </div>
+</div>
