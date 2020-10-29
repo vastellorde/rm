@@ -1,15 +1,21 @@
 $breakpoints: (
-  'small':  767px,
-  'medium': 992px,
-  'large':  1200px
+  phone: 640px,
+  tablet: 768px,
+  desktop: 1024px
 ) !default;
 
 @mixin respond-to($breakpoint) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
     // Prints a media query based on the value
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
-      @content;
+    @if ($breakpoint == 'desktop') {
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    } @else {
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
     }
   }
 

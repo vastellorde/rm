@@ -1,7 +1,13 @@
+@import "breakpoints";
+
 .hero {
   display: flex;
   align-items: center;
   margin-top: 108px;
+
+  @include respond-to(phone) {
+    flex-direction: column;
+  }
 
   &__title {
     font-weight: bold;

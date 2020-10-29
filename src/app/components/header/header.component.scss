@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 .header {
   width: 100%;
   background: #FBFBFB;
@@ -6,6 +8,10 @@
     display: flex;
     align-items: center;
     height: 72px;
+    @include respond-to(phone) {
+      height: 62px;
+      padding: 0 15px;
+    }
   }
 
   .logo {
@@ -16,9 +22,66 @@
     font-size: 16px;
     line-height: 24px;
     color: #000000;
+
+    @include respond-to(phone) {
+      display: none;
+    }
   }
 
   button + button {
     margin-left: 25px;
+  }
+  button {
+    &:nth-of-type(1), &:nth-of-type(2) {
+      @include respond-to(phone) {
+        display: none;
+      }
+    }
+
+    &:nth-last-of-type(1) {
+      @include respond-to(desktop) {
+        display: none;
+      }
+      @include respond-to(phone) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 40px;
+  right: 29px;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 36px -12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 4px 8px;
+
+  &__item {
+    &:first-of-type {
+      margin-bottom: 8px;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.12);
+        left: 0;
+        top: 32px;
+      }
+    }
+    svg {
+      margin-right: 8px;
+    }
+    font-feature-settings: 'liga' off;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
