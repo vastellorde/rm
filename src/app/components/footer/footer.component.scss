@@ -1,7 +1,15 @@
+@import "breakpoints";
+
 .footer {
   display: flex;
   justify-content: space-between;
   padding: 37px 0;
+
+  @include respond-to(phone) {
+    flex-direction: column;
+    padding: 0 15px;
+    margin-top: 24px;
+  }
 
   &:after {
     content: '';
@@ -13,6 +21,10 @@
     position: absolute;
     left: 0;
     margin-top: -37px;
+
+    @include respond-to(phone) {
+      margin-top: -24px;
+    }
   }
 
   .copy {
@@ -25,5 +37,9 @@
     font-size: 16px;
     line-height: 24px;
     color: #232323;
+
+    @include respond-to(phone) {
+      margin-bottom: 24px;
+    }
   }
 }

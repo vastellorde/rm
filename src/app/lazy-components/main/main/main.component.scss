@@ -1,4 +1,5 @@
 @import "breakpoints";
+@import "display";
 
 .hero {
   display: flex;
@@ -7,6 +8,14 @@
 
   @include respond-to(phone) {
     flex-direction: column;
+    margin-top: 24px;
+    padding: 0 15px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__title {
@@ -15,6 +24,11 @@
     line-height: 68px;
     color: #232323;
     margin-bottom: 16px;
+
+    @include respond-to(phone) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   &__subtitle {
@@ -42,6 +56,10 @@
     border: 0;
     padding: 16px 24px;
 
+    @include respond-to(phone) {
+      width: 100%;
+    }
+
     &:focus {
       outline: 0;
     }
@@ -62,6 +80,20 @@
   margin-left: auto;
   margin-top: 60px;
 
+  @include respond-to(phone) {
+    &.d-none {
+      width: 100%;
+      display: block;
+      margin-top: 24px;
+      margin-bottom: 24px;
+
+      span {
+        width: 100%;
+      }
+    }
+    display: none;
+  }
+
   span {
     display: block;
     font-size: 16px;
@@ -78,6 +110,12 @@
   align-items: center;
   margin-top: 100px;
 
+  @include respond-to(phone) {
+    margin-top: 24px;
+    align-items: flex-start;
+    padding: 0 15px;
+  }
+
   .getting-started {
     display: block;
     font-size: 16px;
@@ -93,6 +131,11 @@
     span {
       color: #3D8AFF;
     }
+
+    @include respond-to(phone) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   .stepper {
@@ -101,6 +144,11 @@
     display: flex;
     justify-content: space-between;
 
+    @include respond-to(phone) {
+      margin-top: 0;
+      flex-direction: column;
+    }
+
     & > .step {
       max-width: 304px;
 
@@ -108,6 +156,12 @@
         font-size: 40px;
         line-height: 60px;
         color: #3D8AFF;
+
+        @include respond-to(phone) {
+          font-size: 20px;
+          line-height: 30px;
+          margin-top: 24px;
+        }
 
         &:after {
           display: block;
@@ -133,6 +187,13 @@
   margin-top: 160px;
   display: flex;
 
+  @include respond-to(phone) {
+    flex-direction: column;
+    padding: 0 15px;
+    width: 100%;
+    margin-top: 24px;
+  }
+
   & > * {
     flex: 1;
   }
@@ -141,6 +202,10 @@
     .img {
       width: 100%;
       height: auto;
+    }
+
+    @include respond-to(phone) {
+      order: 2;
     }
   }
   .right {
@@ -161,16 +226,38 @@
         white-space: pre;
         color: #3D8AFF;
       }
+
+      @include respond-to(phone) {
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0;
+        top: 0;
+        margin-top: 24px;
+        height: auto;
+      }
     }
     .content {
       background: #3D8AFF;
       padding: 146px 80px 54px 80px;
+
+      @include respond-to(phone) {
+        background: #ffffff;
+        padding: 0;
+      }
 
       .subtitle {
         font-weight: bold;
         font-size: 24px;
         line-height: 24px;
         color: #ffffff;
+
+        @include respond-to(phone) {
+          color: #232323;
+          font-size: 16px;
+          line-height: 24px;
+          margin-top: 16px;
+          display: block;
+        }
       }
 
       .body {
@@ -179,6 +266,10 @@
         color: #ffffff;
         display: block;
         margin-top: 24px;
+        @include respond-to(phone) {
+          color: #232323;
+          margin-bottom: 24px;
+        }
       }
     }
   }
@@ -188,11 +279,20 @@
   margin-top: 160px;
   display: flex;
 
+  @include respond-to(phone) {
+    margin-top: 40px;
+    width: 100%;
+  }
+
   .right-border {
     width: 72px;
     height: 490px;
     background: #3D8AFF;
     margin-right: 60px;
+
+    @include respond-to(phone) {
+      display: none;
+    }
   }
 
   .reviews {
@@ -204,6 +304,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include respond-to(phone) {
+      width: 100%;
+      height: auto;
+      padding: 24px 15px;
+    }
+
     &__header {
       display: flex;
       width: 100%;
@@ -211,6 +318,9 @@
         width: 60px;
         height: 60px;
         margin-right: 60px;
+        @include respond-to(phone) {
+          display: none;
+        }
       }
 
       &-body {
@@ -232,10 +342,26 @@
           span {
             color: #3D8AFF;
           }
+
+          @include respond-to(phone) {
+            font-size: 20px;
+            line-height: 30px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+          }
         }
       }
       .controls {
         display: flex;
+
+        @include respond-to(phone) {
+          display: none;
+        }
+
+        &.mobile {
+          width: 100%;
+        }
+
         & > * {
           width: 60px;
           height: 60px;
@@ -261,6 +387,10 @@
       margin-top: 32px;
       margin-left: 120px;
 
+      @include respond-to(phone) {
+        margin: 0;
+      }
+
       &-text {
         max-width: 804px;
         width: 100%;
@@ -285,6 +415,12 @@
   flex-direction: column;
   align-items: center;
 
+  @include respond-to(phone) {
+    margin-top: 24px;
+    align-items: flex-start;
+    padding: 0 15px;
+  }
+
   .subtitle {
     font-size: 16px;
     line-height: 24px;
@@ -299,8 +435,13 @@
     span {
       color: #3D8AFF;
     }
-
     margin-bottom: 56px;
+
+    @include respond-to(phone) {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 16px;
+    }
   }
 
   .feature {
@@ -311,6 +452,11 @@
     &__item {
       display: flex;
 
+      @include respond-to(phone) {
+        flex-direction: column;
+        margin-bottom: 24px;
+      }
+
       &-body {
         flex: 1;
         align-self: center;
@@ -318,6 +464,11 @@
         display: flex;
         flex-direction: column;
         background: linear-gradient(90deg, #ffff 50%, #F7F7F7 50%);
+
+        @include respond-to(phone) {
+          background: none;
+          padding: 0;
+        }
       }
 
       &-img {
@@ -326,6 +477,10 @@
         img {
           width: 100%;
           height: auto;
+
+          @include respond-to(phone) {
+            margin-top: 24px;
+          }
         }
       }
 
@@ -344,13 +499,15 @@
     }
   }
 
-  .feature__item + .feature__item {
-    &:not(:last-of-type) {
-      flex-direction: row-reverse;
+  @include respond-to(desktop) {
+    .feature__item + .feature__item {
+      &:not(:last-of-type) {
+        flex-direction: row-reverse;
 
-      .feature__item-body {
-        padding: 56px 0 56px 56px;
-        background: linear-gradient(90deg, #F7F7F7 50%, #ffff 50%);
+        .feature__item-body {
+          padding: 56px 0 56px 56px;
+          background: linear-gradient(90deg, #F7F7F7 50%, #ffff 50%);
+        }
       }
     }
   }
@@ -365,6 +522,15 @@
   margin-top: 160px;
   text-align: center;
 
+  @include respond-to(phone) {
+    width: 100%;
+    max-width: available;
+    margin-top: 0;
+    align-items: flex-start;
+    padding: 0 15px;
+    text-align: start;
+  }
+
   .title {
     font-weight: bold;
     font-size: 40px;
@@ -372,6 +538,11 @@
     color: #232323;
     span {
       color: #3D8AFF;
+    }
+
+    @include respond-to(phone) {
+      font-size: 20px;
+      line-height: 30px;
     }
   }
 }
@@ -382,11 +553,26 @@
   margin-top: 160px;
   margin-bottom: 160px;
 
+  @include respond-to(phone) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 0 15px;
+  }
+
+  .btn {
+    margin-top: 24px;
+    justify-content: center;
+  }
+
   .header {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @include respond-to(phone) {
+      display: none;
+    }
 
     .btn {
       text-transform: uppercase;
@@ -406,8 +592,17 @@
   .posts {
     display: flex;
 
+    @include respond-to(phone) {
+      flex-direction: column;
+    }
+
     .post + .post {
       margin-left: 40px;
+
+      @include respond-to(phone) {
+        margin-top: 24px;
+        margin-left: 0;
+      }
     }
 
     .post {
@@ -430,6 +625,49 @@
         line-height: 24px;
         color: #232323;
       }
+    }
+  }
+}
+
+.controls {
+  display: flex;
+
+  @include respond-to(phone) {
+    display: none;
+  }
+
+  &.mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  & > * {
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+
+    @include respond-to(phone) {
+      background: #1C52A3;
+      width: auto;
+      flex: 1;
+      margin-top: 16px;
+
+      svg {
+        fill: #FFFFFF;
+      }
+    }
+
+    &:first-child {
+      margin-right: 4px;
+    }
+  }
+
+  .btn {
+    svg {
+      margin-right: 0;
     }
   }
 }
