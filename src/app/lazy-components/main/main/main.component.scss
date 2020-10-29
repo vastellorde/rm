@@ -79,6 +79,7 @@
   background: #232323;
   margin-left: auto;
   margin-top: 60px;
+  display: none;
 
   @include respond-to(phone) {
     &.d-none {
