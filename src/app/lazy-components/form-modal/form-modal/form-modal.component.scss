@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 .modal {
   position: fixed;
   width: 840px;
@@ -12,6 +14,18 @@
   z-index: 100;
   border-radius: 4px;
   padding-bottom: 80px;
+
+  @include respond-to(phone) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: none;
+    border-radius: 0;
+    padding: 0 15px;
+  }
 
   .header {
     display: flex;
@@ -53,12 +67,22 @@
       display: flex;
       align-items: center;
       height: 136px;
+
+      @include respond-to(phone) {
+        height: auto;
+        margin-top: 88px;
+      }
+
       .step {
         font-weight: 600;
         font-size: 14px;
         line-height: 16px;
         color: #232323;
         width: 98px;
+
+        @include respond-to(phone) {
+          width: 48px;
+        }
 
         &:not(:last-of-type) {
           margin-right: 8px;
@@ -77,14 +101,26 @@
           height: 8px;
           background: #C0C0C0;
           margin-bottom: 20px;
+
+          @include respond-to(phone) {
+            width: 48px;
+          }
         }
 
         &:first-of-type, &:last-of-type {
           width: 142px;
 
+          @include respond-to(phone) {
+            width: 66px;
+          }
+
           &:before {
             border-radius: 0px 8px 8px 0px;
             width: 139px;
+
+            @include respond-to(phone) {
+              width: 66px;
+            }
           }
         }
 
@@ -133,11 +169,19 @@
   width: 100%;
   height: 1px;
   background: #C0C0C0;
+
+  @include respond-to(phone) {
+    display: none;
+  }
 }
 
 .hero__field {
   display: flex;
   align-items: stretch;
+
+  @include respond-to(phone) {
+    width: 100%;
+  }
 
   &-input {
     height: 56px;
@@ -153,6 +197,10 @@
 
     &:focus {
       outline: 0;
+    }
+
+    @include respond-to(phone) {
+      width: 100%;
     }
   }
 
@@ -177,6 +225,11 @@
   display: flex;
   width: 520px;
 
+  @include respond-to(phone) {
+    width: 100%;
+    flex-direction: column;
+  }
+
   justify-content: space-between;
 
   & ~ .btn {
@@ -184,6 +237,13 @@
     width: 520px;
     align-items: center;
     justify-content: center;
+    @include respond-to(phone) {
+      width: 100%;
+    }
+  }
+
+  .field + .field {
+    margin-top: 16px;
   }
 
   .field {
@@ -196,6 +256,7 @@
       line-height: 16px;
       color: #3c3c3c;
     }
+
     .input {
       width: 240px;
       height: 40px;
@@ -207,6 +268,10 @@
       font-size: 14px;
       line-height: 20px;
       color: #B2B2B2;
+
+      @include respond-to(phone) {
+        width: 100%;
+      }
 
       &:first-of-type {
         margin-right: 40px;
@@ -223,6 +288,19 @@
   height: 156px;
   padding: 4px;
 
+  @include respond-to(phone) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    background: #FFFFFF;
+  }
+
+  .select + .select {
+    @include respond-to(phone) {
+      margin-top: 16px;
+    }
+  }
+
   .select {
     display: flex;
     justify-content: center;
@@ -232,6 +310,18 @@
     width: 218px;
     height: 72px;
     cursor: pointer;
+    color: #232323;
+
+
+    @include respond-to(phone) {
+      width: auto;
+      flex: 1;
+      background: #F5F5F5;
+      padding: 8px 0;
+
+      font-size: 16px;
+      line-height: 24px;
+    }
 
     margin-right: 4px;
 
