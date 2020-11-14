@@ -1,0 +1,24 @@
+<div class="box">
+  <div class="box-main">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Sign in</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form id="auth-form" [formGroup]="authForm" (ngSubmit)="submit()">
+          <mat-form-field appearance="outline">
+            <mat-label>Login</mat-label>
+            <input formControlName="username" matInput type="text">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" form="auth-form" mat-raised-button color="primary">LOGIN</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

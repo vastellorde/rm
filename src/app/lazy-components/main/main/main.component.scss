@@ -641,6 +641,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
+
+    @include respond-to(desktop) {
+      display: none;
+    }
   }
 
   & > * {
@@ -670,5 +674,13 @@
     svg {
       margin-right: 0;
     }
+  }
+}
+
+
+.mobile {
+  display: none;
+  @include respond-to(phone) {
+    display: block;
   }
 }

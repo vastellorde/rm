@@ -19,11 +19,15 @@ const routes: Routes = [
   {
     path: 'blog',
     loadChildren: () => import('./lazy-components/blog/blog.module').then(m => m.BlogModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./lazy-components/auth/auth.module').then(m => m.AuthModule)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', initialNavigation: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
